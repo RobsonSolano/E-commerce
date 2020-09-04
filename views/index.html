@@ -2,9 +2,9 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-6">
-                <div class="logo">
+                <div class="logo text-center">
                     <h1>
-                        <a href="#"><img src="/res/site/img/logo.png"></a>
+                        <a href="#"><img src="/res/site/img/md2.png" width="180"></a>
                     </h1>
                 </div>
             </div>
