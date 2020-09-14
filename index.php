@@ -226,7 +226,7 @@ $app->get("/admin/categories/create", function () {
 
 $app->post("/admin/categories/create", function () {
 	User::verifyLogin();
-	
+
 	$category = new Category();
 
 	$category->setData($_POST);
@@ -281,7 +281,18 @@ $app->post("/admin/categories/:idcategory", function ($idcategory) {
 
 	exit;
 });
+$app->get("/categories/:idcategory",function($idcategory){
+	$category = new Category();
 
+	$category->get((int)$idcategory);
+
+	$page = new Page();
+
+	$page->setTpl("category",[
+		'category' => $category->getValues(),
+		'products' =>[]
+	]);
+});
 
 
 $app->run();
