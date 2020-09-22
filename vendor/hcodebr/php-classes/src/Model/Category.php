@@ -81,7 +81,8 @@ class Category extends Model {
 
 		if ($related === true) {
 
-			return $sql->select("SELECT * FROM tb_products WHERE idproduct IN(
+			return $sql->select("
+				SELECT * FROM tb_products WHERE idproduct IN(
 					SELECT a.idproduct
 					FROM tb_products a
 					INNER JOIN tb_productscategories b ON a.idproduct = b.idproduct
@@ -93,7 +94,8 @@ class Category extends Model {
 
 		} else {
 
-			return $sql->select("SELECT * FROM tb_products WHERE idproduct NOT IN(
+			return $sql->select("
+				SELECT * FROM tb_products WHERE idproduct NOT IN(
 					SELECT a.idproduct
 					FROM tb_products a
 					INNER JOIN tb_productscategories b ON a.idproduct = b.idproduct
@@ -114,7 +116,8 @@ class Category extends Model {
 
 		$sql = new Sql();
 
-		$results = $sql->select("SELECT SQL_CALC_FOUND_ROWS *
+		$results = $sql->select("
+			SELECT SQL_CALC_FOUND_ROWS *
 			FROM tb_products a
 			INNER JOIN tb_productscategories b ON a.idproduct = b.idproduct
 			INNER JOIN tb_categories c ON c.idcategory = b.idcategory

@@ -39,7 +39,6 @@ class User extends Model
 			||
 			!(int)$_SESSION[User::SESSION]["iduser"] > 0
 		) {
-			//Não está logado
 			return false;
 		} else {
 
@@ -86,6 +85,7 @@ class User extends Model
 			throw new \Exception("Usuário inexistente ou senha inválida.");
 		}
 	}
+
 
 	public static function verifyLogin($inadmin = true)
 	{
