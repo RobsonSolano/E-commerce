@@ -8,8 +8,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Aprume Elegance</title>
-    <link rel="shortcut icon" href="/res/site/img/md2.png" type="image/x-icon">
+    <title>Hcode Store</title>
 
     <!-- Google Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,700,600' rel='stylesheet' type='text/css'>
@@ -43,7 +42,7 @@
                 <div class="col-md-8">
                     <div class="user-menu">
                         <ul>
-                            <li><a href="#"><i class="fa fa-user"></i> Minha Conta</a></li>
+                            <li><a href="/profile"><i class="fa fa-user"></i> Minha Conta</a></li>
                             <li><a href="#"><i class="fa fa-heart"></i> Lista de Desejos</a></li>
                             <li><a href="/cart"><i class="fa fa-shopping-cart"></i> Meu Carrinho</a></li>
                             <?php if( checkLogin(false) ){ ?>
@@ -85,22 +84,21 @@
         </div>
     </div>
     <!-- End header area -->
+
     <div class="site-branding-area">
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    <div class="logo text-center">
+                    <div class="logo">
                         <h1>
-                            <a href="#"><img src="/res/site/img/md2.png" width="180"></a>
+                            <a href="/"><img src="/res/site/img/logo.png"></a>
                         </h1>
                     </div>
                 </div>
 
                 <div class="col-sm-6">
                     <div class="shopping-item">
-                        <a href="/cart">Carrinho - <span class="cart-amunt">R$100</span>
-                            <i class="fa fa-shopping-cart"></i> <span
-                                class="product-count">5</span></a>
+                        <a href="/cart">Carrinho - <span class="cart-amunt">R$<?php echo getCartVlSubTotal(); ?></span> <i class="fa fa-shopping-cart"></i> <span class="product-count"><?php echo getCartNrQtd(); ?></span></a>
                     </div>
                 </div>
             </div>
